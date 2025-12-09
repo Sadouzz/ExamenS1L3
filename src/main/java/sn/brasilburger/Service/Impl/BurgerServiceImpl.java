@@ -15,6 +15,10 @@ public class BurgerServiceImpl implements BurgerService {
         this.burgerRepository = burgerRepository;
     }
 
+    @Override
+    public void createBurger(Burger burger) {
+        burgerRepository.insert(burger);
+    }
 
 
 }
