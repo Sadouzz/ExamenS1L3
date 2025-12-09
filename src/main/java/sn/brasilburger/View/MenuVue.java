@@ -24,5 +24,14 @@ public class MenuVue extends Vue {
         return menu;
     }
 
-
+    public void afficheMenus() {
+        List<Menu> menus = menuService.selectAll();
+        if (menus.isEmpty()) {
+            System.out.println("Aucun menu disponible.");
+        } else {
+            for (Menu menu : menus) {
+                System.out.println(menu.toString());
+            }
+        }
+    }
 }
