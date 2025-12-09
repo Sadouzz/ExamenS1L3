@@ -10,6 +10,7 @@ public interface MenuService {
 
     Optional<Menu> selectById(int id);
 
+    List<Menu> selectAll();
 
 }
 

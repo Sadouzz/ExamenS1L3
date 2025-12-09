@@ -25,5 +25,10 @@ public class MenuServiceImpl implements MenuService {
         return menuRepository.selectById(id);
     }
 
+    @Override
+    public List<Menu> selectAll() {
+        return menuRepository.selectAll();
+    }
+
 
 }
