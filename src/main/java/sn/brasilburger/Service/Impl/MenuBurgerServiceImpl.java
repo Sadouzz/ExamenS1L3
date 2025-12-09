@@ -20,5 +20,10 @@ public class MenuBurgerServiceImpl implements MenuBurgerService {
         menuBurgerRepository.insert(menuBurger);
     }
 
+    @Override
+    public Optional<MenuBurger> selectById(int id) {
+        return menuBurgerRepository.selectById(id);
+    }
+
 
 }
