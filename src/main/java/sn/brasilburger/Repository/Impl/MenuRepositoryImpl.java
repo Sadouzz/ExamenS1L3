@@ -20,5 +20,14 @@ public class MenuRepositoryImpl implements MenuRepository {
     }
 
 
+    private Menu toEntity(ResultSet rs) throws SQLException {
+        Menu menu = new Menu();
+        menu.setId(rs.getInt("id"));
+        menu.setLibelle(rs.getString("libelle"));
+        menu.setImageUrl(rs.getString("image_url"));
+        menu.setArchived(rs.getBoolean("is_archived"));
+        menu.setPrix(rs.getDouble("prix"));
+        return menu;
+    }
 
 }
