@@ -11,5 +11,5 @@ public interface Database {
     boolean isConnected();
     void closeConnection();
     <T> Optional<T> fetch(PreparedStatement ps, Convert<T> convert)throws SQLException;
-
+    <T> List<T> fetchAll(PreparedStatement ps, Convert<T> convert)throws SQLException;
 }

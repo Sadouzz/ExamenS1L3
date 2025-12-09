@@ -75,5 +75,13 @@ public class DatabaseImpl implements Database {
         return Optional.ofNullable(data);
     }
 
-
+    @Override
+    public <T> List<T> fetchAll(PreparedStatement ps, Convert<T> convert) throws SQLException {
+        ResultSet rs = ps.executeQuery();
+        List<T> datas = new ArrayList<>();
+        while (rs.next()) {
+            datas.add(convert.toEntity(rs));
+        }
+        return datas;
+    }
 }
