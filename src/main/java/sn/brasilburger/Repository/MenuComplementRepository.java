@@ -11,6 +11,7 @@ public interface MenuComplementRepository {
     int insert(MenuComplement menuComplement);
     Optional<MenuComplement> selectById(int id);
 
+    List<MenuComplement> selectAll();
 
 
 }
