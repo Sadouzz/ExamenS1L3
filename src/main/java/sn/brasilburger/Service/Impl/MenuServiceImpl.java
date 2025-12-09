@@ -30,5 +30,10 @@ public class MenuServiceImpl implements MenuService {
         return menuRepository.selectAll();
     }
 
+    @Override
+    public int numberOfRows()
+    {
+        return menuRepository.numberOfRows();
+    }
 
 }

@@ -12,6 +12,7 @@ public interface MenuService {
 
     List<Menu> selectAll();
 
+    int numberOfRows();
 }
 
 
