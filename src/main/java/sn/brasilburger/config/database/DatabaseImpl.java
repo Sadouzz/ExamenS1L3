@@ -49,6 +49,11 @@ public class DatabaseImpl implements Database {
         return connection;
     }
 
+    @Override
+    public boolean isConnected() {
+        return connection != null;
+    }
+
 
 
 
