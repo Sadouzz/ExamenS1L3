@@ -12,6 +12,7 @@ public interface BurgerCategorieService {
 
     List<BurgerCategorie> selectAll();
 
+    int numberOfRows();
 }
 
 

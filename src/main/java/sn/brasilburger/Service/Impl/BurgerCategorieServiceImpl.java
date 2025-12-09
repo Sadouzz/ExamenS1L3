@@ -30,5 +30,10 @@ public class BurgerCategorieServiceImpl implements BurgerCategorieService {
         return burgerCategorieRepository.selectAll();
     }
 
+    @Override
+    public int numberOfRows()
+    {
+        return burgerCategorieRepository.numberOfRows();
+    }
 
 }
