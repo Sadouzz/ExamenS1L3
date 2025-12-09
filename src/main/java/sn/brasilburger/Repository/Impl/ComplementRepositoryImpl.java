@@ -85,6 +85,17 @@ public class ComplementRepositoryImpl implements ComplementRepository {
     }
 
 
+    @Override
+    public List<Complement> selectAll() {
+        try {
+            Connection conn = database.getConnection();
+            PreparedStatement ps = conn.prepareStatement("select * from complements");
+            return database.<Complement>fetchAll(ps, this::toEntity);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return Collections.emptyList();
+    }
 
     private Complement toEntity(ResultSet rs) throws SQLException {
         Complement c = new Complement();

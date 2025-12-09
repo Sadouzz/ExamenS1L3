@@ -11,6 +11,7 @@ public interface ComplementRepository {
     int insert(Complement complement);
     Optional<Complement> selectById(int id);
 
+    List<Complement> selectAll();
 
 
 }
