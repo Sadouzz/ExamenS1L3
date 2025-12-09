@@ -15,5 +15,10 @@ public class MenuBurgerServiceImpl implements MenuBurgerService {
         this.menuBurgerRepository = menuBurgerRepository;
     }
 
+    @Override
+    public void createMenuBurger(MenuBurger menuBurger) {
+        menuBurgerRepository.insert(menuBurger);
+    }
+
 
 }
