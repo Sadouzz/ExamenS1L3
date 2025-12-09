@@ -24,5 +24,12 @@ public class MenuComplementVue extends Vue {
         return mc;
     }
 
-
+    public void afficheMenuComplements() {
+        List<MenuComplement> liste = service.selectAll();
+        if (liste.isEmpty()) {
+            System.out.println("Aucun menu-complement.");
+        } else {
+            liste.forEach(System.out::println);
+        }
+    }
 }
