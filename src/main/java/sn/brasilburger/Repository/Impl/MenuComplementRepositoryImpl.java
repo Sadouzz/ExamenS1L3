@@ -67,6 +67,19 @@ public class MenuComplementRepositoryImpl implements MenuComplementRepository {
     }
 
 
+    @Override
+    public Optional<MenuComplement> selectById(int id) {
+        Connection conn = database.getConnection();
+        PreparedStatement ps;
+        try {
+            ps = conn.prepareStatement("select * from menu_complement where id = ?");
+            ps.setInt(1, id);
+            return database.<MenuComplement>fetch(ps, this::toEntity);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return Optional.empty();
+    }
 
     private MenuComplement toEntity(ResultSet rs) throws SQLException {
         MenuComplement mc = new MenuComplement();
