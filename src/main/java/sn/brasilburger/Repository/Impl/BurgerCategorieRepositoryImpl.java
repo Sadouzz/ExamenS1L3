@@ -79,6 +79,18 @@ public class BurgerCategorieRepositoryImpl implements BurgerCategorieRepository 
         return Optional.empty();
     }
 
+    @Override
+    public List<BurgerCategorie> selectAll() {
+        try {
+            Connection conn = database.getConnection();
+            PreparedStatement ps = conn.prepareStatement("select * from burger_categorie");
+            return database.<BurgerCategorie>fetchAll(ps, this::toEntity);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return Collections.emptyList();
+    }
+
 
 
 }

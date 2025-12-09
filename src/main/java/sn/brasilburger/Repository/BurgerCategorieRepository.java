@@ -11,6 +11,7 @@ public interface BurgerCategorieRepository {
     int insert(BurgerCategorie burgerCategorie);
     Optional<BurgerCategorie> selectById(int id);
 
+    List<BurgerCategorie> selectAll();
 
 
 }
