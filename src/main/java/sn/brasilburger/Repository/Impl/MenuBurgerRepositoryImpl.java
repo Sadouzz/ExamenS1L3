@@ -42,6 +42,32 @@ public class MenuBurgerRepositoryImpl implements MenuBurgerRepository {
     }
 
 
+    @Override
+    public int insert(MenuBurger mb) {
+        try {
+            if (!database.isConnected()) {
+                throw new SQLException("Erreur de connexion à la BD");
+            }
+            Connection conn = database.getConnection();
+            PreparedStatement ps = conn.prepareStatement(
+                    "INSERT INTO menu_burger (id, menu_id, burger_id, quantite) VALUES (?, ?, ?, ?)"
+            );
+
+            ps.setInt(1, mb.getId());
+            ps.setInt(2, mb.getMenuId());
+            ps.setInt(3, mb.getBurgerId());
+            ps.setInt(4, mb.getQuantite());
+
+            return ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+
+
 
     private MenuBurger toEntity(ResultSet rs) throws SQLException {
         MenuBurger mb = new MenuBurger();
