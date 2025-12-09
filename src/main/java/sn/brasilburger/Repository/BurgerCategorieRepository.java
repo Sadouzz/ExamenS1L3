@@ -9,6 +9,7 @@ import java.util.Optional;
 public interface BurgerCategorieRepository {
     int numberOfRows();
     int insert(BurgerCategorie burgerCategorie);
+    Optional<BurgerCategorie> selectById(int id);
 
 
 

@@ -65,6 +65,20 @@ public class BurgerCategorieRepositoryImpl implements BurgerCategorieRepository 
     }
 
 
+    @Override
+    public Optional<BurgerCategorie> selectById(int id) {
+        Connection conn = database.getConnection();
+        PreparedStatement ps;
+        try {
+            ps = conn.prepareStatement("select * from burger_categorie where id = ?");
+            ps.setInt(1, id);
+            return database.<BurgerCategorie>fetch(ps, this::toEntity);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return Optional.empty();
+    }
+
 
 
 }
