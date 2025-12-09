@@ -23,6 +23,16 @@ public class BurgerRepositoryImpl implements BurgerRepository {
 
 
 
-
+    private Burger toEntity(ResultSet rs) throws SQLException {
+        Burger burger = new Burger();
+        burger.setId(rs.getInt("id"));
+        burger.setLibelle(rs.getString("libelle"));
+        burger.setDesc(rs.getString("description"));
+        burger.setPrix(rs.getDouble("prix"));
+        burger.setImageUrl(rs.getString("image_url"));
+        burger.setArchived(rs.getBoolean("is_archived"));
+        burger.setBurgerCategorieId(rs.getInt("burger_categorie_id"));
+        return burger;
+    }
 
 }
