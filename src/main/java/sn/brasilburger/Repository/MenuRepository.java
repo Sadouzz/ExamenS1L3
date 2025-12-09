@@ -11,6 +11,7 @@ public interface MenuRepository {
     int insert(Menu menu);
     Optional<Menu> selectById(int id);
 
+    List<Menu> selectAll();
 
 
 }
