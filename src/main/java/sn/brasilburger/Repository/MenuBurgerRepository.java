@@ -11,6 +11,7 @@ public interface MenuBurgerRepository {
     int insert(MenuBurger menuBurger);
     Optional<MenuBurger> selectById(int id);
 
+    List<MenuBurger> selectAll();
 
 
 }

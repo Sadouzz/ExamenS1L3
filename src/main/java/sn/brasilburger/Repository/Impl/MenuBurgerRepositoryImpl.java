@@ -81,6 +81,17 @@ public class MenuBurgerRepositoryImpl implements MenuBurgerRepository {
         return Optional.empty();
     }
 
+    @Override
+    public List<MenuBurger> selectAll() {
+        try {
+            Connection conn = database.getConnection();
+            PreparedStatement ps = conn.prepareStatement("select * from menu_burger");
+            return database.<MenuBurger>fetchAll(ps, this::toEntity);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return Collections.emptyList();
+    }
 
     private MenuBurger toEntity(ResultSet rs) throws SQLException {
         MenuBurger mb = new MenuBurger();
