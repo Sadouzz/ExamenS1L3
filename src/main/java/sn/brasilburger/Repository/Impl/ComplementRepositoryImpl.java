@@ -22,5 +22,15 @@ public class ComplementRepositoryImpl implements ComplementRepository {
 
 
 
+    private Complement toEntity(ResultSet rs) throws SQLException {
+        Complement c = new Complement();
+        c.setId(rs.getInt("id"));
+        c.setLibelle(rs.getString("libelle"));
+        c.setPrix(rs.getDouble("prix"));
+        c.setImageUrl(rs.getString("image_url"));
+        c.setArchived(rs.getBoolean("is_archived"));
+        c.setTypeComplement(TypeComplement.valueOf(rs.getString("type_complement")));
+        return c;
+    }
 
 }
