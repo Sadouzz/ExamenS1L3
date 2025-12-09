@@ -8,6 +8,7 @@ import java.util.Optional;
 
 public interface MenuComplementRepository {
     int numberOfRows();
+    int insert(MenuComplement menuComplement);
 
 
 

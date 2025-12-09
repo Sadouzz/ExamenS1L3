@@ -42,6 +42,32 @@ public class MenuComplementRepositoryImpl implements MenuComplementRepository {
     }
 
 
+    @Override
+    public int insert(MenuComplement mc) {
+        try {
+            if (!database.isConnected()) {
+                throw new SQLException("Erreur de connexion à la BD");
+            }
+            Connection conn = database.getConnection();
+            PreparedStatement ps = conn.prepareStatement(
+                    "INSERT INTO menu_complement (id, menu_id, complement_id, quantite) VALUES (?, ?, ?, ?)"
+            );
+
+            ps.setInt(1, mc.getId());
+            ps.setInt(2, mc.getMenuId());
+            ps.setInt(3, mc.getComplementId());
+            ps.setInt(4, mc.getQuantite());
+
+            return ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+
+
     private MenuComplement toEntity(ResultSet rs) throws SQLException {
         MenuComplement mc = new MenuComplement();
         mc.setId(rs.getInt("id"));
