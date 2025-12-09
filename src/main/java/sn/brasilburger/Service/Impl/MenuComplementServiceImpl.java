@@ -15,5 +15,10 @@ public class MenuComplementServiceImpl implements MenuComplementService {
         this.menuComplementRepository = menuComplementRepository;
     }
 
+    @Override
+    public void createMenuComplement(MenuComplement menuComplement) {
+        menuComplementRepository.insert(menuComplement);
+    }
+
 
 }
