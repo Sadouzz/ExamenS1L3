@@ -10,6 +10,7 @@ public interface ComplementService {
 
     Optional<Complement> selectById(int id);
 
+    List<Complement> selectAll();
 
 }
 

@@ -25,5 +25,10 @@ public class ComplementServiceImpl implements ComplementService {
         return complementRepository.selectById(id);
     }
 
+    @Override
+    public List<Complement> selectAll() {
+        return complementRepository.selectAll();
+    }
+
 
 }
