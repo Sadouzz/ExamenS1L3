@@ -25,5 +25,10 @@ public class MenuBurgerServiceImpl implements MenuBurgerService {
         return menuBurgerRepository.selectById(id);
     }
 
+    @Override
+    public List<MenuBurger> selectAll() {
+        return menuBurgerRepository.selectAll();
+    }
+
 
 }
