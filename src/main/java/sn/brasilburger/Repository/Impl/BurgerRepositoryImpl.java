@@ -85,7 +85,17 @@ public class BurgerRepositoryImpl implements BurgerRepository {
         return Optional.empty();
     }
 
-
+    @Override
+    public List<Burger> selectAll() {
+        try {
+            Connection conn = database.getConnection();
+            PreparedStatement ps = conn.prepareStatement("select * from quartiers");
+            return database.<Burger>fetchAll(ps, this::toEntity);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return Collections.emptyList();
+    }
 
     private Burger toEntity(ResultSet rs) throws SQLException {
         Burger burger = new Burger();
