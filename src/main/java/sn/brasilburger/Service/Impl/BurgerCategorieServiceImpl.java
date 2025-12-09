@@ -15,4 +15,9 @@ public class BurgerCategorieServiceImpl implements BurgerCategorieService {
         this.burgerCategorieRepository = burgerCategorieRepository;
     }
 
+    @Override
+    public void createBurgerCategorie(BurgerCategorie burgerCategorie) {
+        burgerCategorieRepository.insert(burgerCategorie);
+    }
+
 }
