@@ -30,5 +30,10 @@ public class ComplementServiceImpl implements ComplementService {
         return complementRepository.selectAll();
     }
 
+    @Override
+    public int numberOfRows()
+    {
+        return complementRepository.numberOfRows();
+    }
 
 }

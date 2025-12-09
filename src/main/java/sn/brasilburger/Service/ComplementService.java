@@ -12,6 +12,7 @@ public interface ComplementService {
 
     List<Complement> selectAll();
 
+    int numberOfRows();
 }
 
 
