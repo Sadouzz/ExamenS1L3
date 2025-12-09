@@ -42,6 +42,31 @@ public class MenuRepositoryImpl implements MenuRepository {
     }
 
 
+    @Override
+    public int insert(Menu menu) {
+        try {
+            if (!database.isConnected()) {
+                throw new SQLException("Erreur de connexion à la BD");
+            }
+            Connection conn = database.getConnection();
+            PreparedStatement ps = conn.prepareStatement(
+                    "INSERT INTO menus (id, libelle, image_url, is_archived, prix) VALUES (?, ?, ?, ?, ?)"
+            );
+
+            ps.setInt(1, menu.getId());
+            ps.setString(2, menu.getLibelle());
+            ps.setString(3, menu.getImageUrl());
+            ps.setBoolean(4, menu.getArchived());
+            ps.setDouble(5, menu.getPrix());
+
+            return ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
 
     private Menu toEntity(ResultSet rs) throws SQLException {
         Menu menu = new Menu();
