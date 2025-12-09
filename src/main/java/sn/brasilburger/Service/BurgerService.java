@@ -8,6 +8,7 @@ import java.util.Optional;
 public interface BurgerService {
     void createBurger(Burger burger);
 
+    Optional<Burger> selectById(int id);
 
 
 }

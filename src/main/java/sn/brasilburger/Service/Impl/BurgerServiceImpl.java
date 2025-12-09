@@ -20,5 +20,10 @@ public class BurgerServiceImpl implements BurgerService {
         burgerRepository.insert(burger);
     }
 
+    @Override
+    public Optional<Burger> selectById(int id) {
+        return burgerRepository.selectById(id);
+    }
+
 
 }
