@@ -20,5 +20,10 @@ public class MenuServiceImpl implements MenuService {
         menuRepository.insert(menu);
     }
 
+    @Override
+    public Optional<Menu> selectById(int id) {
+        return menuRepository.selectById(id);
+    }
+
 
 }
