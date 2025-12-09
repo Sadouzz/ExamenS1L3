@@ -1,0 +1,19 @@
+package sn.brasilburger.Service.Impl;
+
+import sn.brasilburger.Entity.MenuComplement;
+import sn.brasilburger.Repository.MenuComplementRepository;
+import sn.brasilburger.Service.MenuComplementService;
+
+import java.util.List;
+import java.util.Optional;
+
+public class MenuComplementServiceImpl implements MenuComplementService {
+
+    private MenuComplementRepository menuComplementRepository;
+
+    public MenuComplementServiceImpl(MenuComplementRepository menuComplementRepository) {
+        this.menuComplementRepository = menuComplementRepository;
+    }
+
+
+}
