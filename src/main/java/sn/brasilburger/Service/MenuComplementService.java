@@ -10,6 +10,7 @@ public interface MenuComplementService {
 
     Optional<MenuComplement> selectById(int id);
 
+    List<MenuComplement> selectAll();
 
 }
 

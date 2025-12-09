@@ -25,5 +25,10 @@ public class MenuComplementServiceImpl implements MenuComplementService {
         return menuComplementRepository.selectById(id);
     }
 
+    @Override
+    public List<MenuComplement> selectAll() {
+        return menuComplementRepository.selectAll();
+    }
+
 
 }
