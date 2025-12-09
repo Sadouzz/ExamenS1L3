@@ -67,6 +67,19 @@ public class MenuBurgerRepositoryImpl implements MenuBurgerRepository {
     }
 
 
+    @Override
+    public Optional<MenuBurger> selectById(int id) {
+        Connection conn = database.getConnection();
+        PreparedStatement ps;
+        try {
+            ps = conn.prepareStatement("select * from menu_burger where id = ?");
+            ps.setInt(1, id);
+            return database.<MenuBurger>fetch(ps, this::toEntity);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return Optional.empty();
+    }
 
 
     private MenuBurger toEntity(ResultSet rs) throws SQLException {
