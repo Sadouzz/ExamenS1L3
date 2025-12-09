@@ -15,5 +15,10 @@ public class MenuServiceImpl implements MenuService {
         this.menuRepository = menuRepository;
     }
 
+    @Override
+    public void createMenu(Menu menu) {
+        menuRepository.insert(menu);
+    }
+
 
 }
