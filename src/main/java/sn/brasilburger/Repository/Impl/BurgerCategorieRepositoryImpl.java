@@ -42,6 +42,29 @@ public class BurgerCategorieRepositoryImpl implements BurgerCategorieRepository 
     }
 
 
+    @Override
+    public int insert(BurgerCategorie bc) {
+        try {
+            if (!database.isConnected()) {
+                throw new SQLException("Erreur de connexion à la BD");
+            }
+            Connection conn = database.getConnection();
+            PreparedStatement ps = conn.prepareStatement(
+                    "INSERT INTO burger_categories (id, nom) VALUES (?, ?)"
+            );
+
+            ps.setInt(1, bc.getId());
+            ps.setString(2, bc.getNom());
+
+            return ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+
 
 
 }
