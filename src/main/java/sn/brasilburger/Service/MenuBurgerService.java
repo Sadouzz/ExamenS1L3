@@ -12,6 +12,7 @@ public interface MenuBurgerService {
 
     List<MenuBurger> selectAll();
 
+    int numberOfRows();
 }
 
 

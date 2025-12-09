@@ -30,5 +30,10 @@ public class MenuBurgerServiceImpl implements MenuBurgerService {
         return menuBurgerRepository.selectAll();
     }
 
+    @Override
+    public int numberOfRows()
+    {
+        return menuBurgerRepository.numberOfRows();
+    }
 
 }
