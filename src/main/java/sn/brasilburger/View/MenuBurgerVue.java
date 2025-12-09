@@ -24,5 +24,12 @@ public class MenuBurgerVue extends Vue {
         return mb;
     }
 
-
+    public void afficheMenuBurgers() {
+        List<MenuBurger> liste = service.selectAll();
+        if (liste.isEmpty()) {
+            System.out.println("Aucun menu-burger.");
+        } else {
+            liste.forEach(System.out::println);
+        }
+    }
 }
