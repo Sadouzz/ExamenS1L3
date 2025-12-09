@@ -14,6 +14,20 @@ public class Vue {
         return chaine;
     }
 
+    public static int saisieIntPositive(Scanner scanner, String message) {
+        int valeur;
+        do {
+            System.out.print(message);
+            while (!scanner.hasNextInt()) {
+                System.out.println("Veuillez saisir un nombre entier positif !");
+                scanner.nextLine();
+                System.out.print(message);
+            }
+            valeur = scanner.nextInt();
+            scanner.nextLine();
+        } while (valeur < 0);
 
+        return valeur;
+    }
 
 }
