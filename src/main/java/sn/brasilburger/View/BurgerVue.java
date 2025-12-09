@@ -27,5 +27,12 @@ public class BurgerVue extends Vue {
         return b;
     }
 
-
+    public void afficheBurgers() {
+        List<Burger> liste = service.selectAll();
+        if (liste.isEmpty()) {
+            System.out.println("Aucun burger.");
+        } else {
+            liste.forEach(System.out::println);
+        }
+    }
 }
