@@ -9,5 +9,6 @@ import java.util.Optional;
 public interface Database {
     Connection getConnection();
     boolean isConnected();
+    void closeConnection();
 
 }
