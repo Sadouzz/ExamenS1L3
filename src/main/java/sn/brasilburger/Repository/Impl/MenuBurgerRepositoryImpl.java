@@ -20,5 +20,13 @@ public class MenuBurgerRepositoryImpl implements MenuBurgerRepository {
     }
 
 
+    private MenuBurger toEntity(ResultSet rs) throws SQLException {
+        MenuBurger mb = new MenuBurger();
+        mb.setId(rs.getInt("id"));
+        mb.setMenuId(rs.getInt("menu_id"));
+        mb.setBurgerId(rs.getInt("burger_id"));
+        mb.setQuantite(rs.getInt("quantite"));
+        return mb;
+    }
 
 }
