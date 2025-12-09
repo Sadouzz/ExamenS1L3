@@ -8,6 +8,7 @@ import java.util.Optional;
 public interface ComplementService {
     void createComplement(Complement complement);
 
+    Optional<Complement> selectById(int id);
 
 
 }

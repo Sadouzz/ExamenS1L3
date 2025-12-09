@@ -20,5 +20,10 @@ public class ComplementServiceImpl implements ComplementService {
         complementRepository.insert(complement);
     }
 
+    @Override
+    public Optional<Complement> selectById(int id) {
+        return complementRepository.selectById(id);
+    }
+
 
 }
