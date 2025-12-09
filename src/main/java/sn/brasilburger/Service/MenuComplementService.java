@@ -12,6 +12,7 @@ public interface MenuComplementService {
 
     List<MenuComplement> selectAll();
 
+    int numberOfRows();
 }
 
 

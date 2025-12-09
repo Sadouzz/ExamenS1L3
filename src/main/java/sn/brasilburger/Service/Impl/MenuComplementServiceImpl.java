@@ -30,5 +30,10 @@ public class MenuComplementServiceImpl implements MenuComplementService {
         return menuComplementRepository.selectAll();
     }
 
+    @Override
+    public int numberOfRows()
+    {
+        return menuComplementRepository.numberOfRows();
+    }
 
 }
