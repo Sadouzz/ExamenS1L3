@@ -91,6 +91,11 @@ public class BurgerCategorieRepositoryImpl implements BurgerCategorieRepository 
         return Collections.emptyList();
     }
 
-
+    private BurgerCategorie toEntity(ResultSet rs) throws SQLException {
+        BurgerCategorie bc = new BurgerCategorie();
+        bc.setId(rs.getInt("id"));
+        bc.setNom(rs.getString("nom"));
+        return bc;
+    }
 
 }
