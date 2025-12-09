@@ -25,5 +25,10 @@ public class BurgerServiceImpl implements BurgerService {
         return burgerRepository.selectById(id);
     }
 
+    @Override
+    public List<Burger> selectAll() {
+        return burgerRepository.selectAll();
+    }
+
 
 }

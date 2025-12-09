@@ -10,6 +10,7 @@ public interface BurgerService {
 
     Optional<Burger> selectById(int id);
 
+    List<Burger> selectAll();
 
 }
 
