@@ -19,6 +19,29 @@ public class BurgerCategorieRepositoryImpl implements BurgerCategorieRepository 
         this.database = database;
     }
 
+    @Override
+    public int numberOfRows() {
+        int count = 0;
+        try {
+            if (!database.isConnected()) {
+                throw new SQLException("Erreur de connexion à la BD");
+            }
+            Connection conn = database.getConnection();
+            PreparedStatement ps = conn.prepareStatement("SELECT COUNT(*) FROM burger_categorie");
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                count = rs.getInt(1);
+            }
+            rs.close();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
+
+
 
 
 }
