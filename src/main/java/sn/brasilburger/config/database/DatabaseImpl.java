@@ -27,13 +27,22 @@ public class DatabaseImpl implements Database {
         String url = config.get("url");
         String user = config.get("user");
         String password = config.get("password");
-
+        connection = openConnection(driver, url, user, password);
     }
 
     private DatabaseImpl(String driver, String url, String user, String pwd) {
-
+        connection = openConnection(driver, url, user, pwd);
     }
 
+    public Connection openConnection(String driver, String url, String user, String pwd) {
+        try {
+            Class.forName(driver);
+            return DriverManager.getConnection(url, user, pwd);
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 
 
