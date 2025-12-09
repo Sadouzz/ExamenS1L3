@@ -9,6 +9,7 @@ import java.util.Optional;
 public interface ComplementRepository {
     int numberOfRows();
     int insert(Complement complement);
+    Optional<Complement> selectById(int id);
 
 
 

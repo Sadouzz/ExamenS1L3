@@ -70,6 +70,19 @@ public class ComplementRepositoryImpl implements ComplementRepository {
         }
     }
 
+    @Override
+    public Optional<Complement> selectById(int id) {
+        Connection conn = database.getConnection();
+        PreparedStatement ps;
+        try {
+            ps = conn.prepareStatement("select * from complements where id = ?");
+            ps.setInt(1, id);
+            return database.<Complement>fetch(ps, this::toEntity);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return Optional.empty();
+    }
 
 
 
