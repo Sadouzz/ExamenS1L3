@@ -10,6 +10,7 @@ public interface BurgerCategorieService {
 
     Optional<BurgerCategorie> selectById(int id);
 
+    List<BurgerCategorie> selectAll();
 
 }
 
