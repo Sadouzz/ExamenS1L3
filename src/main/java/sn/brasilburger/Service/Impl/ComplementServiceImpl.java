@@ -15,5 +15,10 @@ public class ComplementServiceImpl implements ComplementService {
         this.complementRepository = complementRepository;
     }
 
+    @Override
+    public void createComplement(Complement complement) {
+        complementRepository.insert(complement);
+    }
+
 
 }
