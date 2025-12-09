@@ -20,5 +20,13 @@ public class MenuComplementRepositoryImpl implements MenuComplementRepository {
     }
 
 
+    private MenuComplement toEntity(ResultSet rs) throws SQLException {
+        MenuComplement mc = new MenuComplement();
+        mc.setId(rs.getInt("id"));
+        mc.setMenuId(rs.getInt("menu_id"));
+        mc.setComplementId(rs.getInt("complement_id"));
+        mc.setQuantite(rs.getInt("quantite"));
+        return mc;
+    }
 
 }
