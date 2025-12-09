@@ -67,6 +67,20 @@ public class MenuRepositoryImpl implements MenuRepository {
         }
     }
 
+    @Override
+    public Optional<Menu> selectById(int id) {
+        Connection conn = database.getConnection();
+        PreparedStatement ps;
+        try {
+            ps = conn.prepareStatement("select * from menus where id = ?");
+            ps.setInt(1, id);
+            return database.<Menu>fetch(ps, this::toEntity);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return Optional.empty();
+    }
+
 
     private Menu toEntity(ResultSet rs) throws SQLException {
         Menu menu = new Menu();

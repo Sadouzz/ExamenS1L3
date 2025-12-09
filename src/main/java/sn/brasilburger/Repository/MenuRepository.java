@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface MenuRepository {
     int numberOfRows();
     int insert(Menu menu);
-
+    Optional<Menu> selectById(int id);
 
 
 
