@@ -8,6 +8,8 @@ import java.util.Optional;
 public interface MenuComplementService {
     void createMenuComplement(MenuComplement menuComplement);
 
+    Optional<MenuComplement> selectById(int id);
+
 
 }
 
