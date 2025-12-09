@@ -21,5 +21,12 @@ public class BurgerCategorieVue extends Vue {
         return bc;
     }
 
-
+    public void afficheBurgerCategories() {
+        List<BurgerCategorie> liste = service.selectAll();
+        if (liste.isEmpty()) {
+            System.out.println("Aucune catégorie.");
+        } else {
+            liste.forEach(System.out::println);
+        }
+    }
 }
