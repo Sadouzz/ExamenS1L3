@@ -43,6 +43,35 @@ public class ComplementRepositoryImpl implements ComplementRepository {
     }
 
 
+    @Override
+    public int insert(Complement c) {
+        try {
+            if (!database.isConnected()) {
+                throw new SQLException("Erreur de connexion à la BD");
+            }
+            Connection conn = database.getConnection();
+            PreparedStatement ps = conn.prepareStatement(
+                    "INSERT INTO complements (id, libelle, prix, image_url, is_archived, type_complement) " +
+                            "VALUES (?, ?, ?, ?, ?, ?::type_complement)"
+            );
+
+            ps.setInt(1, c.getId());
+            ps.setString(2, c.getLibelle());
+            ps.setDouble(3, c.getPrix());
+            ps.setString(4, c.getImageUrl());
+            ps.setBoolean(5, c.getArchived());
+            ps.setString(6, c.getTypeComplement().name());
+
+            return ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+
+
 
     private Complement toEntity(ResultSet rs) throws SQLException {
         Complement c = new Complement();
