@@ -8,6 +8,7 @@ import java.util.Optional;
 
 public interface BurgerRepository {
     int numberOfRows();
+    int insert(Burger burger);
 
 
 
