@@ -8,7 +8,7 @@ public final class EntityManager {
     public EntityManager() {
     }
 
-    public static Map<String, String> persistanceUnit(SGDBName sgbdName) {
+    public static Map<String, String> persistanceUnit(SGBDName sgbdName) {
         switch (sgbdName) {
             case POSTGRESQL:
                 return persistanceUnitPostgre();

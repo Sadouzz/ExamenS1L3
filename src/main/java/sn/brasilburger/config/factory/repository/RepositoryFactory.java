@@ -1,17 +1,18 @@
 package sn.brasilburger.config.factory.repository;
 
 
-
+import sn.brasilburger.Repository.Impl.*;
+import sn.brasilburger.config.factory.database.DatabaseFactory;
 
 public final class RepositoryFactory {
-    private static final PersistanceName PERSISTANCE_NAME = PersistanceName.Database;
+    private static final PersistanceName persistanceName = PersistanceName.Database;
 
     public static Object getInstance(EntityName entityName) {
-        switch (PERSISTANCE_NAME) {
+        switch (persistanceName) {
             case List:
                 return null;
             case Database:
-                return null;
+                return getRepositoryDatabase(entityName);
             default:
                 return null;
         }
@@ -20,17 +21,17 @@ public final class RepositoryFactory {
     public static Object getRepositoryDatabase(EntityName entityName) {
         switch (entityName) {
             case Burger:
-                return null;
+                return new BurgerRepositoryImpl(DatabaseFactory.getInstance());
             case BurgerCategorie:
-                return null;
+                return new BurgerCategorieRepositoryImpl(DatabaseFactory.getInstance());
             case Complement:
-                return null;
+                return new ComplementRepositoryImpl(DatabaseFactory.getInstance());
             case Menu:
-                return null;
+                return new MenuRepositoryImpl(DatabaseFactory.getInstance());
             case MenuBurger:
-                return null;
+                return new MenuBurgerRepositoryImpl(DatabaseFactory.getInstance());
             case MenuComplement:
-                return null;
+                return new MenuComplementRepositoryImpl(DatabaseFactory.getInstance());
             default:
                 return null;
         }

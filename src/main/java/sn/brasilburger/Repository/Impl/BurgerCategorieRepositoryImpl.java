@@ -79,6 +79,7 @@ public class BurgerCategorieRepositoryImpl implements BurgerCategorieRepository 
         return Optional.empty();
     }
 
+
     @Override
     public List<BurgerCategorie> selectAll() {
         try {

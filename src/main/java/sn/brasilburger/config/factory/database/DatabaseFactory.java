@@ -4,7 +4,7 @@ import sn.brasilburger.config.database.Database;
 import sn.brasilburger.config.database.DatabaseImpl;
 
 public final class DatabaseFactory {
-    private static final SGDBName sgbdName = SGDBName.POSTGRESQL;
+    private static final SGBDName sgbdName = SGBDName.POSTGRESQL;
 
     private DatabaseFactory() {
     }
