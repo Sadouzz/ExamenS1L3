@@ -1,11 +1,19 @@
 is_global = true
 build_property.TargetFramework = net9.0
+build_property.TargetFramework = net9.0
+build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CSharp
 build_property.RootNamespace = CSharp
@@ -20,12 +28,64 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
+[D:/Licence/Licence 3/Semestre 1/ExamenProgrammation(CSharp-Java-Symfony)/CSharp/CSharp/Views/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Licence/Licence 3/Semestre 1/ExamenProgrammation(CSharp-Java-Symfony)/CSharp/CSharp/Views/Auth/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Licence/Licence 3/Semestre 1/ExamenProgrammation(CSharp-Java-Symfony)/CSharp/CSharp/Views/Burger/BurgerCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVyZ2VyXEJ1cmdlckNhcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Licence/Licence 3/Semestre 1/ExamenProgrammation(CSharp-Java-Symfony)/CSharp/CSharp/Views/Burger/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVyZ2VyXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Licence/Licence 3/Semestre 1/ExamenProgrammation(CSharp-Java-Symfony)/CSharp/CSharp/Views/Burger/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVyZ2VyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Licence/Licence 3/Semestre 1/ExamenProgrammation(CSharp-Java-Symfony)/CSharp/CSharp/Views/Catalog/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWxvZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Licence/Licence 3/Semestre 1/ExamenProgrammation(CSharp-Java-Symfony)/CSharp/CSharp/Views/Commande/ChoixComplements.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWFuZGVcQ2hvaXhDb21wbGVtZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Licence/Licence 3/Semestre 1/ExamenProgrammation(CSharp-Java-Symfony)/CSharp/CSharp/Views/Commande/Commander.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWFuZGVcQ29tbWFuZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Licence/Licence 3/Semestre 1/ExamenProgrammation(CSharp-Java-Symfony)/CSharp/CSharp/Views/Commande/InfosLivraison.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWFuZGVcSW5mb3NMaXZyYWlzb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Licence/Licence 3/Semestre 1/ExamenProgrammation(CSharp-Java-Symfony)/CSharp/CSharp/Views/Commande/UserCommandes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWFuZGVcVXNlckNvbW1hbmRlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Licence/Licence 3/Semestre 1/ExamenProgrammation(CSharp-Java-Symfony)/CSharp/CSharp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Licence/Licence 3/Semestre 1/ExamenProgrammation(CSharp-Java-Symfony)/CSharp/CSharp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Licence/Licence 3/Semestre 1/ExamenProgrammation(CSharp-Java-Symfony)/CSharp/CSharp/Views/Menu/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Licence/Licence 3/Semestre 1/ExamenProgrammation(CSharp-Java-Symfony)/CSharp/CSharp/Views/Menu/MenuCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVudVxNZW51Q2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Licence/Licence 3/Semestre 1/ExamenProgrammation(CSharp-Java-Symfony)/CSharp/CSharp/Views/Produits/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVpdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Licence/Licence 3/Semestre 1/ExamenProgrammation(CSharp-Java-Symfony)/CSharp/CSharp/Views/Shared/Error.cshtml]

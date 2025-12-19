@@ -1,0 +1,33 @@
+@using Models
+@model Burger
+
+<div class="col-md-2 mb-4">
+    <div class="card h-100 shadow-sm bg-warning d-flex flex-column align-items-center ps-4 p-2">
+        <img src="@Model.ImageUrl" class="card-img-top" alt="@Model.Libelle"
+            style="max-height: 190px; max-width: 270px; object-fit: cover;" />
+        <div class="card-body text-center text-white">
+            <h2 class="card-title text-uppercase">@Model.Libelle</h2>
+            <h4 class="card-text">@Model.Prix F CFA</h4>
+            <a href="/catalog/burger/@Model.Id" class="btn btn-primary rounded-pill">COMMANDER</a>
+        </div>
+    </div>
+    
+    @* <div class="card shadow-sm">
+        <img src="@Model.ImageUrl" class="card-img-top" alt="@Model.Libelle"
+            style="height: 220px; object-fit: cover;" />
+
+        <div class="card-body">
+            <h5 class="card-title">@Model.Libelle</h5>
+            <p class="card-text fw-bold text-danger"></p>
+
+            <a href="/catalog/burger/@Model.Id" class="btn btn-primary w-100 mb-2">
+                Voir détails
+            </a>
+
+            <a href="/commande/commander?type=burger&id=@Model.Id" class="btn btn-warning w-100">
+                Commander
+            </a>
+
+        </div>
+    </div> *@
+</div>

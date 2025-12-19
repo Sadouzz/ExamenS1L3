@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -6,14 +7,15 @@
     <title>@ViewData["Title"] - CSharp</title>
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/CSharp.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
+    @* <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CSharp</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Catalog" asp-action="Index">CSharp</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -21,7 +23,10 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Catalog" asp-action="Index">Catalogue</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Burger" asp-action="Index">Burger</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
@@ -30,18 +35,70 @@
                 </div>
             </div>
         </nav>
+    </header> *@
+    <header class="bb-header py-4">
+        
+        <div class="container-fluid px-5">
+
+            <!-- TOP BAR -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div class="d-flex align-items-center gap-2">
+                    <img src="img/logo.png" alt="Logo" class="bb-logo">
+                    <span class="bb-title">BrasilBurger</span>
+                </div>
+
+                <div class="bb-search d-flex align-items-center px-3">
+                    <img src="img/search.svg" class="me-2" width="24">
+                    <span class="bb-search-btn">Rechercher</span>
+                </div>
+
+                <div class="d-flex align-items-center gap-4">
+                    @if (User.Identity != null && User.Identity.IsAuthenticated)
+                    {
+                        <div>
+                            <i class="bi bi-person-fill"></i> @User.Identity.Name
+                            <a asp-controller="Auth" asp-action="Logout">Déconnexion</a>
+                        </div>
+                    }
+                    else{
+                        <a asp-controller="Auth" asp-action="Login" class="text-decoration-none">
+                            Se Connecter
+                        </a>
+                    }
+
+                </div>
+            </div>
+
+            <nav class="d-flex justify-content-center gap-5">
+                <a asp-controller="Catalog" asp-action="Index" class="bb-nav active">
+                    Catalogue
+                </a>
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a asp-controller="Commande" asp-action="UserCommandes"
+                        asp-route-id="@User.FindFirst(ClaimTypes.NameIdentifier)?.Value" class="bb-nav">
+                        Mes commandes
+                    </a>
+                }
+
+            </nav> 
+
+        </div>
     </header>
-    <div class="container">
+
+
+    <div class="container-fluid">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    @* <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2025 - CSharp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>
+    </footer> *@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

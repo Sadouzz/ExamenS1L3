@@ -1,0 +1,150 @@
+@{
+    ViewData["Title"] = "Category";
+}
+
+<main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+        <div class="container">
+            <h1 class="mb-2 mb-lg-0">Category</h1>
+            <nav class="breadcrumbs">
+                <ol>
+                    <li><a href="/">Home</a></li>
+                    <li class="current">Category</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="card p-3 shadow widgets-container">
+
+                    <!-- Product Categories Widget -->
+                    <div class="product-categories-widget widget-item">
+                        <h3 class="widget-title">Categories</h3>
+                        <ul class="category-tree list-unstyled mb-0">
+                            <li class="category-item">
+                                <a href="#" class="category-link burger">Burgers</a>
+                            </li>
+                            <li class="category-item">
+                                <a href="#" class="category-link menus">Menus</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Product List -->
+            <div class="col-lg-8">
+
+                <!-- Filter & Sort Section -->
+                <section id="category-header" class="category-header section">
+                    <div class="card p-3 shadow container mb-3">
+                        <div class="filter-container mb-4">
+                            <div class="row g-3">
+
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="filter-item search-form">
+                                        <label for="productSearch" class="form-label">Search Products</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="productSearch" placeholder="Search for products..." />
+                                            <button class="btn search-btn" type="button">
+                                                <i class="bi bi-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-6 col-lg-2">
+                                    <div class="filter-item">
+                                        <label for="priceRange" class="form-label">Price Range</label>
+                                        <select class="form-select" id="priceRange">
+                                            <option>All Prices</option>
+                                            <option>Under $25</option>
+                                            <option>$25 to $50</option>
+                                            <option>$50 to $100</option>
+                                            <option>$100 to $200</option>
+                                            <option>$200 & Above</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-6 col-lg-2">
+                                    <div class="filter-item">
+                                        <label for="sortBy" class="form-label">Sort By</label>
+                                        <select class="form-select" id="sortBy">
+                                            <option>Featured</option>
+                                            <option>Price: Low to High</option>
+                                            <option>Price: High to Low</option>
+                                            <option>Customer Rating</option>
+                                            <option>Newest Arrivals</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Products List -->
+                <section id="category-product-list" class="category-product-list section">
+                    <div class="container">
+                        <div class="row gy-4">
+
+                            <!-- Product Example -->
+                            <div class="col-lg-6 ps-0">
+                                <div class="card h-100 shadow-sm">
+
+                                    <div class="position-relative">
+                                        <img src="~/assets/burg.jpg"
+                                             alt="Product"
+                                             style="width: 100%;" />
+
+                                        <span class="badge bg-primary position-absolute top-0 start-0 m-2">
+                                            New Season
+                                        </span>
+
+                                        <!-- Overlay -->
+                                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center overlay"
+                                             style="background: rgba(0,0,0,0.5); opacity: 0; transition: 0.3s;">
+                                            <div class="mb-2">
+                                                <button class="btn btn-sm btn-light me-1"><i class="bi bi-heart"></i></button>
+                                                <button class="btn btn-sm btn-light me-1"><i class="bi bi-arrow-repeat"></i></button>
+                                                <button class="btn btn-sm btn-light"><i class="bi bi-eye"></i></button>
+                                            </div>
+
+                                            <button class="btn btn-sm btn-primary">Add to Cart</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <a href="/product-details" class="text-decoration-none text-dark">
+                                                Vestibulum ante ipsum primis
+                                            </a>
+                                        </h5>
+                                        <p class="card-text fw-bold">$149.99</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Tu pourras dupliquer ce bloc pour afficher d’autres produits -->
+
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+        </div>
+    </div>
+
+</main>

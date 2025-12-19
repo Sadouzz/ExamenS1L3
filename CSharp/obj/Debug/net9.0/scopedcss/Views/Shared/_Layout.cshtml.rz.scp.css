@@ -1,0 +1,128 @@
+/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-w8fo5myk57] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-w8fo5myk57] {
+  color: #0077cc;
+}
+
+.btn-primary[b-w8fo5myk57] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-w8fo5myk57], .nav-pills .show > .nav-link[b-w8fo5myk57] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-w8fo5myk57] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-w8fo5myk57] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-w8fo5myk57] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-w8fo5myk57] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-w8fo5myk57] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
+
+/* HEADER */
+.bb-header[b-w8fo5myk57] {
+  background-color: #ff5b1f;
+  color: white;
+}
+
+/* LOGO */
+.bb-logo[b-w8fo5myk57] {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.bb-title[b-w8fo5myk57] {
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+/* SEARCH */
+.bb-search[b-w8fo5myk57] {
+  width: 460px;
+  background: white;
+  border-radius: 35px;
+  height: 50px;
+  justify-content: space-between;
+}
+
+.bb-search-btn[b-w8fo5myk57] {
+  background: rgba(255, 91, 31, 0.5);
+  padding: 6px 18px;
+  border-radius: 25px;
+  color: white;
+  font-weight: 600;
+}
+
+/* BUTTON */
+.bb-btn-contact[b-w8fo5myk57] {
+  background: white;
+  color: #af630d;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 8px 24px;
+}
+
+/* INSCRIPTION */
+.bb-inscription[b-w8fo5myk57] {
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* ICONS */
+.bb-icon[b-w8fo5myk57] {
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.bb-icon img[b-w8fo5myk57] {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* NAV */
+.bb-nav[b-w8fo5myk57] {
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+}
+
+.bb-nav:hover[b-w8fo5myk57],
+.bb-nav.active[b-w8fo5myk57] {
+  text-decoration: underline;
+}
+

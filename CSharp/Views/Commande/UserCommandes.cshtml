@@ -1,0 +1,70 @@
+@{
+    ViewData["Title"] = "Mes Commandes";
+    var commandes = ViewBag.Commandes as List<Models.Commande>;
+}
+
+<h2 class="mb-4">Mes Commandes</h2>
+
+@if (commandes == null || !commandes.Any())
+{
+    <p>Vous n'avez aucune commande.</p>
+}
+else
+{
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Montant Total</th>
+                <th>Statut</th>
+                <th>Type de Retrait</th>
+                <th>Adresse</th>
+                <th>Items</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var commande in commandes)
+            {
+                <tr>
+                    <td>@commande.Id</td>
+                    <td>@commande.CreatedAt.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@commande.MontantTotal.ToString("C")</td>
+                    <td>@commande.Statut</td>
+                    <td>@commande.TypeRetrait</td>
+                    <td>@commande.Adresse</td>
+                    <td>
+                        <ul>
+                            @foreach (var item in commande.CommandeItems)
+                            {
+                                <li>
+                                    @if (item.Burger != null)
+                                    {
+                                        <span>
+                                            Burger: @item.Burger.Libelle
+                                        </span>
+                                    }
+                                    @if (item.Menu != null)
+                                    {
+                                        <span>
+                                            Menu: @item.Menu.Libelle
+                                        </span>
+                                    }
+                                    @if (item.Complement != null)
+                                    {
+                                        <span>
+                                            Complement: @item.Complement.Libelle
+                                        </span>
+                                    }
+                                    <span>
+                                        - Quantité : @item.Quantite
+                                    </span>
+                                </li>
+                            }
+                        </ul>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

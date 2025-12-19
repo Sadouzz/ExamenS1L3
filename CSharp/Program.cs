@@ -1,7 +1,43 @@
+using Data;
+using Microsoft.EntityFrameworkCore;
+using Models;
+using Npgsql;
+using Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Auth/Login";
+        options.AccessDeniedPath = "/Auth/AccessDenied";
+        options.ExpireTimeSpan = TimeSpan.FromHours(2);
+    });
+
+builder.Services.AddAuthorization();
+
+
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"),
+        o => o.MapEnum<TypeRetrait>()
+              .MapEnum<StatutCommande>()
+              .MapEnum<TypeComplement>()
+              .MapEnum<RoleUser>()
+    )
+);
+
+builder.Services.AddScoped<BurgerService>();
+builder.Services.AddScoped<MenuService>();
+builder.Services.AddScoped<ComplementService>();
+builder.Services.AddScoped<QuartierService>();
+builder.Services.AddScoped<ZoneService>();
+builder.Services.AddScoped<CommandeService>();
+
 
 var app = builder.Build();
 
@@ -16,13 +52,15 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
+    pattern: "{controller=Catalog}/{action=Index}/{id?}")
     .WithStaticAssets();
 
 

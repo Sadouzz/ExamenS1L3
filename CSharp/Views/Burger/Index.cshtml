@@ -1,0 +1,64 @@
+@model List<Models.Burger>
+
+@{
+    ViewData["Title"] = "Menu des Burgers";
+}
+
+<div class="bg-white py-4">
+    <div class="container">
+        <div class='d-flex flex-column align-items-center justify-content-center text-center'>
+            <h3 class='playfair-display m-0'>Nos Plats</h3>
+            <hr class='border-2 border-main opacity-100 ' style='width: 10%; max-width: 150px;' />
+        </div>
+    </div>
+</div>
+
+<div class='bg-secondary30 py-5 position-relative'>
+    <div class="container">
+        <div class='row justify-content-center'>
+
+            @* Boucle Razor pour générer les cartes pour chaque plat dans le Model *@
+            @foreach(var b in Model)
+            {
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card text-bg-dark rounded-0 border-0 shadow-lg overflow-hidden menu-card">
+                        
+                        @* Image - Réplique du style du composant MenuCard *@
+                        <img
+                            src="@b.ImageUrl" 
+                            class="card-img"
+                            alt="@b.Libelle"
+                            style="height: 400px; object-fit: cover;"
+                        />
+
+                        @* Overlay avec dégradé noir - Réplique du style du composant MenuCard *@
+                        <div
+                            class="card-img-overlay d-flex flex-column align-items-start justify-content-end p-3"
+                            style="background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0,0,0,0.2) 60%, transparent);"
+                        >
+                            @* Titre *@
+                            <h3 class="text-white poppins">@b.Libelle</h3>
+
+                            @* Prix (facultatif, si vous voulez l'afficher) *@
+                            <div class="d-flex text-white small ">
+                                <h5 class="fw-bold poppins">@b.Prix XOF</h5>
+                            </div>
+                            
+                            @* Catégorie (facultatif) *@
+                            <p class="text-white mb-0 small">@b.BurgerCategorie?.Nom</p>
+
+                            @* Bouton (facultatif) *@
+                            <a href="@Url.Action("Details", "Burger", new { id = b.Id })" 
+                               class="btn mt-2 text-white"
+                               style="background-color: #D4AF7F; color: white; font-weight: bold;">
+                                Voir plus →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+            @* Fin de la boucle Razor *@
+            
+        </div>
+    </div>
+</div>

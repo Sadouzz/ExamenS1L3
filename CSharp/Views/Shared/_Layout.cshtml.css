@@ -46,3 +46,83 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+
+/* HEADER */
+.bb-header {
+  background-color: #ff5b1f;
+  color: white;
+}
+
+/* LOGO */
+.bb-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.bb-title {
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+/* SEARCH */
+.bb-search {
+  width: 460px;
+  background: white;
+  border-radius: 35px;
+  height: 50px;
+  justify-content: space-between;
+}
+
+.bb-search-btn {
+  background: rgba(255, 91, 31, 0.5);
+  padding: 6px 18px;
+  border-radius: 25px;
+  color: white;
+  font-weight: 600;
+}
+
+/* BUTTON */
+.bb-btn-contact {
+  background: white;
+  color: #af630d;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 8px 24px;
+}
+
+/* INSCRIPTION */
+.bb-inscription {
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* ICONS */
+.bb-icon {
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.bb-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* NAV */
+.bb-nav {
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+}
+
+.bb-nav:hover,
+.bb-nav.active {
+  text-decoration: underline;
+}
+

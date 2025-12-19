@@ -1,0 +1,24 @@
+@{
+    var burger = ViewBag.Burger;
+    ViewData["Title"] = "Commander " + burger.Libelle;
+    var complements = ViewBag.Complements as List<Models.Complement>;
+}
+
+<div class="container mt-5">
+    <h2>Commander: @burger</h2>
+
+    <form method="post" asp-controller="Commande" asp-action="InfosLivraison">
+        <input type="hidden" name="type" value="burger" />
+        <input type="hidden" name="itemId" value="@ViewBag.Burger.Id" />
+
+        @foreach (var comp in ViewBag.Complements)
+        {
+            <div class="form-check">
+                <input type="checkbox" name="selectedComplements" value="@comp.Id" />
+                <label>@comp.Libelle (@comp.Prix)</label>
+            </div>
+        }
+
+        <button class="btn btn-primary mt-3">Continuer</button>
+    </form>
+</div>

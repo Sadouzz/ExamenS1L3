@@ -1,0 +1,67 @@
+@{
+    ViewData["Title"] = "Commander " + ViewBag.ItemName;
+    var complements = ViewBag.AvailableComplements as List<Models.Complement>;
+    var quartiers = ViewBag.quartiers as List<Models.Quartier>;
+    var zones = ViewBag.zones as List<Models.Zone>;
+}
+
+<div class="container mt-5">
+    <h2>Commander: @ViewBag.ItemName</h2>
+
+    <form method="post" asp-controller="Commande" asp-action="Create">
+        <input type="hidden" name="type" value="@ViewBag.Type" />
+        <input type="hidden" name="itemId" value="@ViewBag.ItemId" />
+
+        <div class="mb-3">
+            <label>Quartier</label>
+            <select name="quartier" class="form-select" required>
+                @if (quartiers != null && quartiers.Any())
+                {
+                    foreach (var quartier in quartiers)
+                    {
+                        <option value="@quartier.Id">@quartier.Nom</option>
+                    }
+                }
+                else
+                {
+                    <p class="text-muted">Aucun quartier disponible pour le moment.</p>
+                }
+            </select>
+        </div>
+        
+        <div class="mb-3">
+            <label for="adresse">Adresse:</label>
+            <input type="text" class="form-control" name="adresse" required />
+        </div>
+
+        <div class="mb-3">
+            <label>Type de retrait</label>
+            <select name="typeRetrait" class="form-select" required>
+                <option value="SUR_PLACE">Sur place</option>
+                <option value="A_EMPORTER">À emporter</option>
+                <option value="LIVRAISON">Livraison</option>
+            </select>
+        </div>
+
+
+        <h4>Compléments (optionnel)</h4>
+
+        @if (complements != null && complements.Any())
+        {
+            foreach (var comp in complements)
+            {
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="selectedComplements" value="@comp.Id"
+                        id="comp-@comp.Id" />
+                    <label class="form-check-label" for="comp-@comp.Id">@comp.Libelle (@comp.Prix F CFA)</label>
+                </div>
+            }
+        }
+        else
+        {
+            <p class="text-muted">Aucun complément disponible pour le moment.</p>
+        }
+
+        <button type="submit" class="btn btn-success mt-3">Confirmer la commande</button>
+    </form>
+</div>
